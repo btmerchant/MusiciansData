@@ -1,0 +1,77 @@
+{
+  "player": {
+    "101": {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "groups": {
+        "201": "true",
+        "202": "true"
+                },
+      "Songs": {
+        "301": "true",
+        "303": "true",
+        "310": "true"
+                      }
+                },
+    "102": {},
+    "103": {},
+    "104": {}
+              },
+  "groups": {
+    "201": {
+      "groupName": "rockyGroup1",
+      "groupStyle": "rock",
+      "groupNumberOfPlayers": "2",
+      "members": {
+        "101": "true",
+        "103": "true"
+                  }
+              },
+    "201": {
+      "groupName": "funkyGroup1",
+      "groupStyle": "funk",
+      "groupNumberOfPlayers": "2",
+      "members": {
+        "102": "true",
+        "104": "true"
+                  }
+              }
+            },
+  "songs": {
+    "301": {
+      "title": "CoolSong1",
+      "artist": "coolGroup1",
+      "author": "joeCool",
+      "leadVoc": "joe",
+      "speed": "slow",
+      "key": "A",
+      "tempo": "120",
+      "status": "Active",
+      "arangement": "Capo guitar to G, banjo intro",
+      "lyric": "What a great tune",
+      "owner": {
+        "101": "true",
+        "103": "true",
+        "104": "true"
+                }
+              },
+    "302": {
+      "title": "WowSong1",
+      "artist": "WowGroup1",
+      "author": "jWow",
+      "leadVoc": "j",
+      "speed": "Fast",
+      "key": "C",
+      "tempo": "110",
+      "status": "Preliminary",
+      "arangement": "Capo guitar to B",
+      "lyric": "This is my song for you",
+      "owner": {
+        "102": "true",
+        "104": "true"
+                }
+            }
+          }
+}

@@ -1,0 +1,58 @@
+<div ng-include="'partials/nav-home.html'"></div>
+<div class="formRegister" class="container">
+<h3 class="formHeading">Please enter your information<br>and then click Submit</h3>
+  <form name="form">
+    <div class="input-group">
+      <span class="input-group-addon">First Name:</span>
+      <input type="text" class="form-control" placeholder="First Name">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon">Last Name:<span style="margin-left: 1px;"></span></span>
+      <input type="text" class="form-control" placeholder="Last Name">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon">Email:<span style="margin-left: 34px;"></span></span>
+      <input class="form-control" id="email" placeholder="Create username with email address (e.g., user@example.com)" ng-model="authCtrl.email" type="email"/>
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon">Password:<span style="margin-left: 6px;"></span></span>
+      <input class="form-control" id="password" placeholder="Enter a password" ng-model="authCtrl.password" type="password"/>
+    </div><span><br></span>
+      <a href="#/" role="button" class="btn btn-material-blue" ng-click="authCtrl.register()">SUBMIT</a>
+      <span style="margin-left: 20px;"></span>
+      <a role="button" class="btn btn-material-red" ng-click="authCtrl.removePlayer()">REMOVE USER</a>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  <form ng-controller="AuthCtrl" name="form">
+    <div class="row">
+      <div class="col-md-6" class="firstName__register" class="formInput">
+        First Name:
+      </div>
+      <div class="col-md-6">
+        <input id="reg-firstName" placeholder="Enter Your First Name" ng-model="AuthCtrl.email" type="text" size="25"/>
+      </div>
+    </div>
+      <div class="email__register" class="formInput">
+        Last Name: <input id="reg-email" placeholder="Enter Your Last Name" ng-model="AuthCtrl.email" type="text" size="25"/>
+      </div>
+      <div class="email__register" class="formInput">
+        Email: <input id="reg-email" placeholder="Enter Your email address" ng-model="AuthCtrl.email" type="text" size="25"/>
+      </div>
+      <div class="password__register" class="formInput">
+        Password: <input id="reg-password" placeholder="Enter a password" ng-model="AuthCtrl.password" type="text" size="25"/>
+      </div><br><br> -->

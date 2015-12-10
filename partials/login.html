@@ -1,0 +1,93 @@
+
+  <div ng-include="'/partials/nav-home.html'"></div>
+  <div class="formHeading">
+      <h1>Welcome</h1>
+  </div>
+  <div class="formRegister">
+    <div class="formHeading">
+      <h1>Please Login</h1>
+      <h3>Or Register to join the group</h3>
+    </div>
+    <div name="login-form" class='formBox'>
+      <form  id="login-form">
+        <div class="input-group">
+          <span class="input-group-addon">Email:<span style="margin-left: 34px;"></span></span>
+          <input class="form-control" id="email" required type="email" ng-model="authCtrl.email" placeholder="Email Address" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Password:<span style="margin-left: 6px;"></span></span>
+          <input class="form-control" id="password" required type="password" ng-model="authCtrl.password" placeholder="Password" aria-describedby="basic-addon1">
+        </div>
+        <span><br></span>
+        <span><a href="#/" role="button" class="btn btn-material-blue" ng-click="authCtrl.login()">LOGIN</a>
+        <span style="margin-left: 60px;"></span><a href="#/register"><button role="link" class="btn btn-material-blue">REGISTER</button></a>
+        </span>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div ng-controller="AuthCtrl as authCtrl" ng-include="'partials/navbar.html'"></div>
+<div ng-include="'partials/jumbotron.html'"></div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div id="login-header">
+      <h1>Log in to avoid thoughts of oblivion!</h1>
+      <div name="login-form">
+        <form  id="login-form">
+          <div>
+            <input class="form-control" id="email" required type="email" ng-model="authCtrl.email" placeholder="Enter your email address (e.g., memories@goneforever.com"/>
+          </div>
+          <div>
+            <input class="form-control" id="password" required type="password" ng-model="authCtrl.password" placeholder="Enter your password"/>
+          </div>
+          <button class="btn btn-material-blue" ng-click="authCtrl.login()" ng-show="authCtrl.email && authCtrl.password">Log in</button>
+
+          <h3>Need an account?  <a href="#/register">Register</a> today!</h3>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
