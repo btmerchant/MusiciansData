@@ -1,5 +1,5 @@
 .DS_store
-bower_components/*
-mode_modules/*
+bower_components
 .sass-cache
-node_modules/*
+node_modules
+styles
