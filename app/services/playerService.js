@@ -1,13 +1,12 @@
-MusApp.factory('playerFactory', ['Auth', '$firebaseArray', '$firebaseObject', '$route',
-  function(Auth, $firebaseArray, $firebaseObject, $route) {
+MusApp.service('PlayerService', function(Auth, $firebaseArray, $firebaseObject, $route) {
 
-  var playerFactory = {};
+  var playerService = {};
   var groupsArray = [];
   var songsArray = [];
   var playerArray = [];
   var loggedInPlayer, refSongs, refPlayer;
 
-    setPlayer: function(authData) {
+    this.setPlayer = function(authData) {
       loggedInPlayer = authData;
       console.log('loggedInPlayer', loggedInPlayer);
       refSongs = new Firebase('https://musicon.firebaseio.com/players/' + loggedInPlayer.uid + '/songs/');
@@ -19,9 +18,9 @@ MusApp.factory('playerFactory', ['Auth', '$firebaseArray', '$firebaseObject', '$
       console.log('refPlayer', refPlayer);
       console.log('playerArray', playerArray);
       return songsArray, playerArray;
-    }
+    };
 
-    setGroup: function(authData) {
+    this.setGroup = function(authData) {
       loggedInPlayer = authData;
       console.log('loggedInPlayer', loggedInPlayer);
       ref = new Firebase('https://musicon.firebaseio.com/players/' + loggedInPlayer.uid + '/groups/');
@@ -29,29 +28,40 @@ MusApp.factory('playerFactory', ['Auth', '$firebaseArray', '$firebaseObject', '$
       console.log('ref', ref);
       console.log('groupsArray', groupsArray);
       return groupsArray;
-    }
+    };
 
-    addSong: function(newSong) {
-      console.log('songsArray', songsArray);
-      songsArray.$add(newSong)
-      .then(function(ref) {
-        var id = ref.key();
-        console.log('added song with id ' + id);
-      });
-    }
+    // this.addSong = function(newSong) {
+    //   console.log('songsArray', songsArray);
+    //   songsArray.$add(newSong)
+    //   .then(function(ref) {
+    //     var id = ref.key();
+    //     console.log('added song with id ' + id);
+    //   });
+    // };
 
-    editSong: function(songToEdit) {
+    this.editSong = function(songToEdit) {
       var index = songsArray.$indexFor(songToEdit.id);
       console.log('index', index);
       songsArray[index] = songToEdit;
       songsArray.$save(index);
-    }
+    };
 
-    getSongsArray: function() {
+    this.getSongsArray = function() {
       console.log('songsArray', songsArray);
       return songsArray;
-    }
+    };
 
-    return playerFactory;
 
-}]); //end factory definition
+
+
+
+
+
+
+
+// service is just a constructor function
+  // that will be called with 'new'
+// this.sayHello = function(name) {
+//      return "Hi " + name + "!";
+//   };
+});

@@ -1,6 +1,6 @@
-MusApp.controller('PlayerCtrl', ['Auth', 'playerFactory', '$location'],
-  function(auth, playerFactory, $location) {
-
+MusApp.controller('PlayerCtrl', ['Auth', 'playerService', '$location'],
+  function(auth, playerService, $location) {
+    var authData = auth;
 
 
   });

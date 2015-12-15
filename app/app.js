@@ -17,7 +17,7 @@ var MusApp = angular.module('MusApp',['ngRoute', 'firebase']);
       })
       .when('/player', {
         templateUrl: 'partials/player.html',
-        controller: 'AuthCtrl as authCtrl'
+        controller: 'PlayerCtrl as playerCtrl'
       })
       .otherwise({
         redirectTo: '/'
