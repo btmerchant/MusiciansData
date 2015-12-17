@@ -21,8 +21,8 @@ MusApp.controller('AuthCtrl', ['Auth', '$firebaseAuth', '$firebaseArray','$locat
         console.log('Player created with uid: ', playerData.uid);
 
         var userId = playerData.uid;
-        userRef.$add({
-            userId: userId,
+        //var myUserRef = userRef.child(userId);
+        ref.child(userId).set({
             email: aScope.email,
             firstName: aScope.firstName,
             lastName: aScope.lastName
@@ -43,8 +43,7 @@ MusApp.controller('AuthCtrl', ['Auth', '$firebaseAuth', '$firebaseArray','$locat
         console.log('Logged in as: ', authData.uid);
         // playerFactory.setPlayer(authData);
         // playerFactory.setGroup(authData);
-        playerId = authData.password.email;
-        console.log('playerId', playerId);
+        // playerId = authData.password.email;
         $location.path('/player');
       }).catch(function(error) {
         aScope.error = error;

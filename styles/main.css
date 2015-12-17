@@ -1,9 +1,8 @@
 body {
   background-color: none;
-  background-image: url(/img/clouds.jpeg);
   background-repeat: no-repeat;
   background-size: 100%;
-  z-index: -1; }
+  z-index: 0; }
 
 /*#backing {
 position:fixed ;
@@ -19,6 +18,7 @@ background:rgba(0,0,0,0.8);
   text-align: center; }
 
 .nav-box {
+  z-index: 1;
   position: fixed;
   /*float: left;*/
   left: 0px;
@@ -64,5 +64,11 @@ background:rgba(0,0,0,0.8);
 
 .pageIdBox {
   position: fixed; }
+
+.toolBox {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  z-index: 5; }
 
 /*# sourceMappingURL=main.css.map */

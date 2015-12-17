@@ -1,9 +1,9 @@
 body {
   background-color: none;
-  background-image: url(/img/clouds.jpeg);
+  // background-image: url(/img/clouds.jpeg);
   background-repeat: no-repeat;
   background-size: 100%;
-  z-index: -1;
+  z-index: 0;
 }
 
 /*#backing {
@@ -22,6 +22,7 @@ background:rgba(0,0,0,0.8);
 }
 
 .nav-box {
+  z-index: 1;
   position: fixed;
   /*float: left;*/
   left: 0px;
@@ -73,4 +74,15 @@ background:rgba(0,0,0,0.8);
 .pageIdBox {
   position: fixed;
 
+}
+
+.toolBox {
+  // margin-top: 10px;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  z-index: 5;
+  // height: 100px;
+  // background-color: red;
+  // opacity: .8;
 }
