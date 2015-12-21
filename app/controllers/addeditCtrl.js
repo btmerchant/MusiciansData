@@ -1,8 +1,10 @@
-MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray',
+MusApp.controller('AddeditCtrl', ['$scope', '$location', 'Auth', '$firebaseArray',
   function($scope, $location, Auth, $firebaseArray) {
     var ref = new Firebase('https://musicon.firebaseio.com');
     var user = ref.getAuth();
     var currentPlayer = user.uid;
+
+
 
     var playerRef = new Firebase('https://musicon.firebaseio.com/players');
     var players = $firebaseArray(playerRef);
@@ -14,4 +16,10 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
       $scope.playersFirstName = this.player.firstName;
       $scope.playersLastName = this.player.lastName;
     })
+
+    // console.log('playerRef', playerRef);
+    // console.log('currentPlayer', currentPlayer);
+    // console.log('player', this.player);
+    // console.log('name',this.player.firstName);
+
   }]);
