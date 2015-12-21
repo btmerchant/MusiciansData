@@ -4,7 +4,7 @@ var MusApp = angular.module('MusApp',['ngRoute', 'firebase']);
   MusApp.config(function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/login.html',
+        templateUrl: 'partials/home.html',
         controller: 'AuthCtrl as authCtrl'
       })
       .when('/login', {
