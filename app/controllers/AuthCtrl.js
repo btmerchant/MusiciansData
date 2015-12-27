@@ -1,6 +1,5 @@
 MusApp.controller('AuthCtrl', ['Auth', '$firebaseAuth', '$firebaseArray','$location',
   function(Auth, $firebaseAuth, $firebaseArray, $location) {
-    var playerObject = {};
     var aScope = this;
     var playerId;
     var fireRef = new Firebase('https://musicon.firebaseio.com/');
