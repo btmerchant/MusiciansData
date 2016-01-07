@@ -1,12 +1,12 @@
-MusApp.factory('AddEditFactory', ['firebase',
-  function(firebase) {
-    var ref = new Firebase('https://musicon.firebaseio.com/songs');
-    ref.once("value", function (snapshot) {
-      var songs = snapshot.val();
-    })
-  }
-  return songs;
-]);
+// MusApp.factory('AddEditFact', ['firebase',
+//   function(firebase) {
+//     var ref = new Firebase('https://musicon.firebaseio.com/songs');
+//     ref.once("value", function (snapshot) {
+//       var songs = snapshot.val();
+//     })
+//   }
+//   return songs;
+// ]);
 
 
 // app.factory('items', function() {

@@ -1,6 +1,8 @@
 MusApp.factory('Auth', ['$firebaseAuth',
   function($firebaseAuth) {
     var ref = new Firebase('https://musicon.firebaseio.com/');
-    return $firebaseAuth(ref);
+    var fireAuth = $firebaseAuth(ref);
+    console.log('fireAuth= ', fireAuth);
+    return fireAuth;
   }
 ]);

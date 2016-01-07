@@ -1,5 +1,4 @@
 var MusApp = angular.module('MusApp',['ngRoute', 'firebase']);
-  var playerObject = {};
 
   MusApp.config(function($routeProvider) {
     $routeProvider
