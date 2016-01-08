@@ -1,9 +1,8 @@
 MusApp.controller('AuthCtrl', ['Auth', '$firebaseAuth', '$firebaseArray','$location',
   function(Auth, $firebaseAuth, $firebaseArray, $location) {
-    var playerObject = {};
-    var playerId;
-    var playersRef = new Firebase('https://musicon.firebaseio.com/players');
-    var playersArray = $firebaseArray(playersRef);
+
+    // var playersRef = new Firebase('https://musicon.firebaseio.com/players');
+    // var playersArray = $firebaseArray(playersRef);
     this.register = function() {
       var newPlayer = {
         email: this.email,
@@ -39,12 +38,6 @@ MusApp.controller('AuthCtrl', ['Auth', '$firebaseAuth', '$firebaseArray','$locat
         password: this.password
       }).then(function(authData) {
         console.log('Logged in as: ', authData.uid);
-        // playerFactory.setPlayer(authData);
-        // playerFactory.setGroup(authData);
-        playerId = authData.password.email;
-        this.playerFirstName = authData.firstName;
-        this.playerLastName = authData.LastName;
-        console.log('playerId', playerId);
         $location.path('/player');
       }).catch(function(error) {
         this.error = error;
