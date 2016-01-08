@@ -3,7 +3,6 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
     console.log('PlayerCtrl');
     var ref = new Firebase('https://musicon.firebaseio.com');
     var user = ref.getAuth();
-    var currentPlayer = user.uid;
     var playerRef = new Firebase('https://musicon.firebaseio.com/players');
     var player = $firebaseArray(playerRef);
     var songsRef = new Firebase('https://musicon.firebaseio.com/songs');
@@ -17,14 +16,14 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
     console.log("players array", this.players);
 
      songs.$loaded(function () {
-      this.song = songs.$getRecord(currentPlayer);
+      this.song = songs.$getRecord(user);
       console.log('songs', songs);
     });
 
     this.addSong = function() {
 
       songs.$add({
-        uid: currentPlayer,
+        uid: user,
         title: this.newSong.title
       });
       console.log('Added Song');

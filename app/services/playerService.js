@@ -39,17 +39,17 @@
     //   });
     // };
 
-    this.editSong = function(songToEdit) {
-      var index = songsArray.$indexFor(songToEdit.id);
-      console.log('index', index);
-      songsArray[index] = songToEdit;
-      songsArray.$save(index);
-    };
+    // this.editSong = function(songToEdit) {
+    //   var index = songsArray.$indexFor(songToEdit.id);
+    //   console.log('index', index);
+    //   songsArray[index] = songToEdit;
+    //   songsArray.$save(index);
+    // };
 
-    this.getSongsArray = function() {
-      console.log('songsArray', songsArray);
-      return songsArray;
-    };
+    // this.getSongsArray = function() {
+    //   console.log('songsArray', songsArray);
+    //   return songsArray;
+    // };
 
 
 
@@ -64,4 +64,4 @@
 // this.sayHello = function(name) {
 //      return "Hi " + name + "!";
 //   };
-});
+// });

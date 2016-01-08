@@ -1,19 +1,17 @@
 MusApp.controller('AuthCtrl', ['Auth', '$firebaseAuth', '$firebaseArray','$location',
   function(Auth, $firebaseAuth, $firebaseArray, $location) {
     var playerObject = {};
-    var aScope = this;
     var playerId;
-    var fireRef = new Firebase('https://musicon.firebaseio.com/');
-    var ref = new Firebase('https://musicon.firebaseio.com/players');
-    var userRef = $firebaseArray(ref);
-    aScope.register = function() {
+    var playersRef = new Firebase('https://musicon.firebaseio.com/players');
+    var playersArray = $firebaseArray(playersRef);
+    this.register = function() {
       var newPlayer = {
-        email: aScope.email,
-        password: aScope.password,
-        firstName: aScope.firstName,
-        lastName: aScope.lastName
+        email: this.email,
+        password: this.password,
+        firstName: this.firstName,
+        lastName: this.lastName
       };
-      console.log('email', aScope.email);
+      console.log('email', this.email);
       Auth.$createUser({
         email: newPlayer.email,
         password: newPlayer.password
@@ -21,24 +19,24 @@ MusApp.controller('AuthCtrl', ['Auth', '$firebaseAuth', '$firebaseArray','$locat
         console.log('Player created with uid: ', playerData.uid);
 
         var userId = playerData.uid;
-        userRef.$add({
+        playersArray.$add({
             userId: userId,
-            email: aScope.email,
-            firstName: aScope.firstName,
-            lastName: aScope.lastName
+            email: this.email,
+            firstName: this.firstName,
+            lastName: this.lastName
         });
         $location.path('/');
       }).catch(function(error) {
-        aScope.error = error;
+        this.error = error;
         console.log('error', error);
       });
     };
 
-    aScope.login = function() {
-      console.log('email', aScope.email);
+    this.login = function() {
+      console.log('email', this.email);
       Auth.$authWithPassword({
-        email: aScope.email,
-        password: aScope.password
+        email: this.email,
+        password: this.password
       }).then(function(authData) {
         console.log('Logged in as: ', authData.uid);
         // playerFactory.setPlayer(authData);
@@ -49,35 +47,35 @@ MusApp.controller('AuthCtrl', ['Auth', '$firebaseAuth', '$firebaseArray','$locat
         console.log('playerId', playerId);
         $location.path('/player');
       }).catch(function(error) {
-        aScope.error = error;
+        this.error = error;
         console.log('Authentication failed:', error);
       });
     };
 
-    aScope.logout = function() {
+    this.logout = function() {
       console.log('logging out');
         Auth.$unauth();
         $location.path('/');
     };
 
-    aScope.removePlayer = function() {
+    this.removePlayer = function() {
 
       Auth.$removeUser({
-        email: aScope.email,
-        password: aScope.password
+        email: this.email,
+        password: this.password
       }).then(function() {
-        aScope.message = "Player removed!"
-        console.log(aScope.message);
+        this.message = "Player removed!";
+        console.log(this.message);
       }).catch(function(error) {
-        aScope.error = error;
+        this.error = error;
       });
     };
 
-    aScope.checkIn = function() {
+    this.checkIn = function() {
       if (playerId === true) {
-        console.log('It is true!')
+        console.log('It is true!');
         return playerId;
       }
-    }
+    };
 }]);
 
