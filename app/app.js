@@ -20,7 +20,7 @@ var MusApp = angular.module('MusApp',['ngRoute', 'firebase']);
       })
       .when('/addEdit', {
         templateUrl: 'partials/addEdit.html',
-        controller: 'AddEditCtrl as addEditCtrl'
+        controller: 'PlayerCtrl as playerCtrl'
       })
       .otherwise({
         redirectTo: '/'
