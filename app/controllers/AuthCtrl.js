@@ -44,6 +44,8 @@ MusApp.controller('AuthCtrl', ['Auth', '$firebaseAuth', '$firebaseArray','$locat
         // playerFactory.setPlayer(authData);
         // playerFactory.setGroup(authData);
         playerId = authData.password.email;
+        this.playerFirstName = authData.firstName;
+        this.playerLastName = authData.LastName;
         console.log('playerId', playerId);
         $location.path('/player');
       }).catch(function(error) {

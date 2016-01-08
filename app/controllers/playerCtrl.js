@@ -6,10 +6,12 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
     // var fireRef = new Firebase('https://musicon.firebaseio.com');
     this.currentUser = Auth.$getAuth().uid;
     console.log("User = ",this.currentUser);
+
     // var currentPlayer = user.uid;
     // console.log("CurrentPlayer = ", currentPlayer);
     var playersRef = new Firebase('https://musicon.firebaseio.com/players');
     this.players = $firebaseArray(playersRef);
+    console.log("players array", this.players);
 
     // console.log('players= ', players);
     // players.$loaded(function () {
