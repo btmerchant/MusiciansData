@@ -4,18 +4,18 @@ MusApp.controller('AddEditCtrl', ['$scope', '$location', 'Auth', '$firebaseArray
     var user = ref.getAuth();
     var currentPlayer = user.uid;
     var playerRef = new Firebase('https://musicon.firebaseio.com/players');
-    var players = $firebaseArray(playerRef);
+    var player = $firebaseArray(playerRef);
     var songsRef = new Firebase('https://musicon.firebaseio.com/songs');
     var songs = $firebaseArray(songsRef);
 
     songs.$loaded(function () {
       this.song = songs.$getRecord(currentPlayer);
       console.log('songs', songs);
-      // $scope.playersFirstName = this.player.firstName;
-      // $scope.playersLastName = this.player.lastName;
+      this.playersFirstName = this.player.firstName;
+      this.playersLastName = this.player.lastName;
     });
 
-    this.addSong = function(e) {
+    this.addSong = function() {
       songs.$add({
         uid: currentPlayer,
         title: this.newSong.title

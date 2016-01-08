@@ -1,9 +1,9 @@
 <div ng-include="'partials/nav-home.html'"></div><br><br><br><br><br>
 <div ng-include="'partials/playerTools.html'" ></div>
-<div class="playerInfoBox" class="container">
+<div class="playerInfoBox" class="container" ng-repeat="player in playerCtrl.players" ng-show="player.userId == playerCtrl.user">
   <h3 class="formHeading">Welcome<br>{{player.firstName}}<span> </span>{{player.lastName}}</h3>
 </div>
-<div class="songs" ng-repeat="songs in songs">
+<div class="songs" ng-repeat="songs in songs" ng-show>
   <span><b>{{song.title}}</b></span><br>
 </div>
 
