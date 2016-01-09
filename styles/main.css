@@ -63,6 +63,25 @@ background:rgba(0,0,0,0.8);
   border-width: 2px;
   padding-top: 15px; }
 
+.listInfoBox {
+  position: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  background-color: white;
+  width: 350px;
+  height: auto;
+  border-style: solid black;
+  border-radius: 5px;
+  border-width: 2px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  padding-left: 15px; }
+
+.deleteButton {
+  position: right;
+  align: right; }
+
 .pageIdBox {
   position: fixed; }
 

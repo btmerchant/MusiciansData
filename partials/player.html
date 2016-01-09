@@ -1,13 +1,18 @@
 <div ng-include="'partials/nav-home.html'"></div><br><br><br><br><br>
 <div ng-include="'partials/playerTools.html'" ></div>
-<div class="playerInfoBox" class="container" ng-repeat="player in playerCtrl.players" ng-show="player.userId == playerCtrl.user">
-  <h3 class="formHeading">Welcome<br>{{player.firstName}}<span> </span>{{player.lastName}}</h3>
-  <ul>
-    <li ng-repeat="song in addEditCtrl.songs" ng-show="song.uid == addEditCtrl.user">{{songs.title}}</li>
-  </ul>
-</div>
-<div class="songs" ng-repeat="songs in songs" ng-show>
-  <span><b>{{song.title}}</b></span><br>
-</div>
 
+<div class="listInfoBox">
+<div ng-repeat="player in playerCtrl.players" ng-show="player.userId == playerCtrl.user">
+  <h3 class="formHeading">{{player.firstName}}<span> </span>{{player.lastName}}'s Song List</h3>
+</div>
+  <div ng-repeat="songs in playerCtrl.songs" ng-show="songs.uid == playerCtrl.user">
+    <table>
+      <tr>
+        <td><button ng-click="playerCtrl.deleteSong()"><h6>DELETE</h6></button></a></td>
+        <td><span>&nbsp&nbsp</span></td>
+        <td><h4>{{songs.title}}</h4></td>
+      </tr>
+    </table>
+  </div>
+</div>
 
