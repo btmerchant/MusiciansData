@@ -27,9 +27,12 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
       console.log('Added Song');
     };
 
-    this.deleteSong = function() {
+     this.deleteSong = function(id) {
+      var songRef = new Firebase('https://musicon.firebaseio.com/songs' + '/' + id);
+      console.log("songRef", songRef);
       console.log("deleteSong function");
-      songs.$remove();
+      console.log("$id ", id);
+      songRef.remove();
       console.log("delete function run");
     };
 

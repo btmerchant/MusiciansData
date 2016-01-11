@@ -8,7 +8,7 @@
   <div ng-repeat="songs in playerCtrl.songs" ng-show="songs.uid == playerCtrl.user">
     <table>
       <tr>
-        <td><button ng-click="playerCtrl.deleteSong()"><h6>X</h6></button></a></td>
+        <td><button  ng-click="playerCtrl.deleteSong($id)"><h6>X</h6></button></td>
         <td><span>&nbsp&nbsp</span></td>
         <td><h6>{{songs.title}}</h6></td>
       </tr>

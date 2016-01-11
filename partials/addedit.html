@@ -5,16 +5,29 @@
   </div>
   <div class="formRegister">
     <div class="formHeading">
-      <br><br><h4>Add or Edit a Song</h4>
-    </div>
-    <div name="addSong-form" class='formBox'>
+    <h4 style="text-align: center;"><b>Add or Edit a Song</b></h4>
       <form  id="addSong-form">
-        <div class="input-group">
-          <span class="input-group-addon">Title:<span style="margin-left: 34px;"></span></span>
-          <input class="form-control" id="title" required type="title" ng-model="playerCtrl.newSong.title" placeholder="Song Title" aria-describedby="basic-addon1">
+        <div>
+          <input type="text" size="32" id="title" ng-model="playerCtrl.newSong.title" placeholder="Song Title*" required><br>
+          <input type="text" size="32" id="Artist" ng-model="playerCtrl.newSong.Artist" placeholder="Song Artist">
+          <input type="text" size="32" id="Composer" ng-model="playerCtrl.newSong.Composer" placeholder="Song Composer">
+          <input type="text" size="32" id="Key" ng-model="playerCtrl.newSong.Key" placeholder="Song Key">
+          <input type="text" size="32" id="LeadVoc" ng-model="playerCtrl.newSong.LeadVoc" placeholder="Song Lead Vocalist"><br><br>
+          <table>
+              <tr class="tempoBtns">
+                <td><input type="radio" name="Tempo" value="FAST"> FAST</td><br>
+                <td><input type="radio" name="Tempo" value="MEDIUM" checked> MEDIUM</td><br>
+                <td><input type="radio" name="Tempo" value="SLOW"> SLOW</td>
+              </tr>
+              <tr class="statusBtns">
+                <td><input type="radio" name="Status" value="Preliminary" checked> Preliminary</td><br>
+                <td><input type="radio" name="Status" value="Active"> Active</td><br>
+                <td><input type="radio" name="Status" value="Closed"> closed</td>
+              </tr>
+            </table>
         </div>
         <span><br></span>
-        <span><a href="#/player" role="button" class="btn btn-material-blue" ng-click="playerCtrl.addSong()">Submit</a>
+        <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a style="color: black;" href="#/player" ng-click="playerCtrl.addSong()"><b>SUBMIT</b></a>
         </span>
       </form>
     </div>
