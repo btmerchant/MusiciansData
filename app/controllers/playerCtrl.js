@@ -22,7 +22,13 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
       console.log("addSong Function");
       songs.$add({
         uid: this.user,
-        title: this.newSong.title
+        title: this.newSong.title,
+        artist: this.newSong.artist,
+        composer: this.newSong.composer,
+        key: this.newSong.key,
+        leadVoc: this.newSong.leadVoc,
+        tempo: this.newSong.tempo,
+        status: this.newSong.status
       });
       console.log('Added Song');
     };

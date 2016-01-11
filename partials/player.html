@@ -4,13 +4,16 @@
 <div class="listInfoBox">
 <div ng-repeat="player in playerCtrl.players" ng-show="player.userId == playerCtrl.user">
   <h4 class="formHeading">{{player.firstName}}<span> </span>{{player.lastName}}'s Song List</h4>
+  <hr>
 </div>
   <div ng-repeat="songs in playerCtrl.songs" ng-show="songs.uid == playerCtrl.user">
     <table>
       <tr>
-        <td><button  ng-click="playerCtrl.deleteSong($id)"><h6>X</h6></button></td>
+        <td><button ng-click="playerCtrl.deleteSong()"><h6>X</h6></button></a></td>
         <td><span>&nbsp&nbsp</span></td>
         <td><h6>{{songs.title}}</h6></td>
+        <td><span>&nbsp</span></td>
+        <td><h6>{{songs.key}}</h6></td>
       </tr>
     </table>
   </div>
