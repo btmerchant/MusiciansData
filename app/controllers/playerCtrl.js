@@ -20,6 +20,24 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
 
     this.addSong = function() {
       console.log("addSong Function");
+      if (!this.newSong.artist) {
+        this.newSong.artist = null;
+      }
+      if (!this.newSong.composer) {
+        this.newSong.composer = null;
+      }
+      if (!this.newSong.key) {
+        this.newSong.key = null;
+      }
+      if (!this.newSong.leadVoc) {
+        this.newSong.leadVoc = null;
+      }
+      if (!this.newSong.tempo) {
+        this.newSong.tempo = null;
+      }
+      if (!this.newSong.status) {
+        this.newSong.status = null;
+      }
       songs.$add({
         uid: this.user,
         title: this.newSong.title,
