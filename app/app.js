@@ -18,8 +18,8 @@ var MusApp = angular.module('MusApp',['ngRoute', 'firebase']);
         templateUrl: 'partials/player.html',
         controller: 'PlayerCtrl as playerCtrl'
       })
-      .when('/addEdit', {
-        templateUrl: 'partials/addEdit.html',
+      .when('/addSong', {
+        templateUrl: 'partials/add.html',
         controller: 'PlayerCtrl as playerCtrl'
       })
       .otherwise({

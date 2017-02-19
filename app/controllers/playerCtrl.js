@@ -12,6 +12,7 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
     this.songs = $firebaseArray(songsRef);
     console.log("players array", this.players);
     console.log("song", this.songs);
+    this.currentList = "A";
 
     //  songs.$loaded(function () {
     //   this.song = songs.$getRecord(this.user);
@@ -20,6 +21,7 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
 
     this.addSong = function() {
       console.log("addSong Function");
+      console.log("currentList = ", this.currentList);
       if (!this.newSong.artist) {
         this.newSong.artist = null;
       }
@@ -38,6 +40,9 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
       if (!this.newSong.status) {
         this.newSong.status = null;
       }
+      if (!this.newSong.list) {
+        this.newSong.list = "A";
+      }
       songs.$add({
         uid: this.user,
         title: this.newSong.title,
@@ -46,7 +51,45 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
         key: this.newSong.key,
         leadVoc: this.newSong.leadVoc,
         tempo: this.newSong.tempo,
-        status: this.newSong.status
+        status: this.newSong.status,
+        list: this.newSong.list
+      });
+      console.log('Added Song');
+    };
+
+    this.editSong = function(id) {
+      console.log("editSong Function");
+      if (!this.newSong.artist) {
+        this.newSong.artist = null;
+      }
+      if (!this.newSong.composer) {
+        this.newSong.composer = null;
+      }
+      if (!this.newSong.key) {
+        this.newSong.key = null;
+      }
+      if (!this.newSong.leadVoc) {
+        this.newSong.leadVoc = null;
+      }
+      if (!this.newSong.tempo) {
+        this.newSong.tempo = null;
+      }
+      if (!this.newSong.status) {
+        this.newSong.status = null;
+      }
+      if (!this.newSong.list) {
+        this.newSong.list = "A";
+      }
+      songs.$add({
+        uid: this.user,
+        title: this.newSong.title,
+        artist: this.newSong.artist,
+        composer: this.newSong.composer,
+        key: this.newSong.key,
+        leadVoc: this.newSong.leadVoc,
+        tempo: this.newSong.tempo,
+        status: this.newSong.status,
+        list: this.newSong.list
       });
       console.log('Added Song');
     };

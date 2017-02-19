@@ -7,15 +7,15 @@
     <hr>
   </div>
     <table class="table table-striped">
-      <th>DEL</th>
       <th>SONG TITLE</th>
       <th>KEY</th>
+
+      <th> <a href="#/addSong"> <button >ADD A SONG</button></a></th>
       <tr ng-repeat="songs in playerCtrl.songs" ng-show="songs.uid == playerCtrl.user">
-        <td data-title="'Delete'" ><button ng-click="playerCtrl.deleteSong(songs.$id)"><h6>X</h6></button></a></td>
-       <!-- <td><span>&nbsp&nbsp</span></td> -->
-       <td data-title="Song Title'="><h6>{{songs.title}}</h6></td>
-       <!-- <td><span>&nbsp</span></td> -->
-       <td data-title="'Song Key'" ><h6>{{songs.key}}</h6></td>
+       <td data-title="Song Title'="><h5>{{songs.title}}</h5></td>
+       <td data-title="'Song Key'" ><h5>{{songs.key}}</h5></td>
+       <td data-title="'Edit'Delete" ><h6><button ng-click="playerCtrl.editSong(songs.$id)">EDIT </button> <button ng-click="playerCtrl.deleteSong(songs.$id)"> DELETE</button></h6></td>
+
       </tr>
     </table>
 </div>
