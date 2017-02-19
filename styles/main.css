@@ -17,6 +17,16 @@ background:rgba(0,0,0,0.8);
   color: white;
   text-align: center; }
 
+.radBtnLt {
+  float: left;
+  margin-left: 2em;
+}
+
+.radBtnRt {
+  float: Right;
+  margin-right: 2em;
+}
+
 .nav-box {
   z-index: 1;
   position: fixed;
@@ -40,7 +50,9 @@ background:rgba(0,0,0,0.8);
   margin-top: 4em;
   width: 20em;
   padding: 20px;
-  padding-top: 5px; }
+  padding-top: 5px;
+  padding-bottom: 1px;
+}
 
 .formHeading {
   text-align: center;
@@ -69,7 +81,7 @@ background:rgba(0,0,0,0.8);
   margin-right: auto;
   margin-top: 4em;
   background-color: white;
-  width: 20em;
+  width: 40em;
   height: auto;
   border-style: solid black;
   border-radius: 5px;
@@ -93,6 +105,23 @@ background:rgba(0,0,0,0.8);
 
 .logout {
   text-align: right;
-  float: right; }
+  float: right;
+}
+
+/*table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}*/
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+/*.key {
+  background-color: rgba(10, 10, 10, 0.3);
+  width: 1.5em;
+  height: 2.4em;
+  padding: .5em;
+}*/
 
 /*# sourceMappingURL=main.css.map */
