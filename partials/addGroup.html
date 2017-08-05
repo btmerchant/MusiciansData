@@ -1,0 +1,15 @@
+<div ng-include="'partials/nav-home.html'"></div><br><br><br><br><br>
+<div ng-include="'partials/addEditGroupTools.html'" ></div>
+  <div class="formRegister">
+    <div class="formHeading">
+    <h4 style="text-align: center;"><b>Add or Edit a Group</b></h4>
+      <form  id="addGroup-form">
+        <div>
+          <input type="text" size="32" id="title" ng-model="playerCtrl.newGroup.name" placeholder="Group Name*" required><br><br>
+        </div>
+        <span><br></span><div><br></div>
+        <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a style="color: black;" href="#/group" ng-click="playerCtrl.addGroup()"><b>SUBMIT</b></a>
+        </span>
+      </form>
+    </div>
+  </div>

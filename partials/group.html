@@ -1,0 +1,21 @@
+<div ng-include="'partials/nav-home.html'"></div><br><br><br><br><br>
+<div ng-include="'partials/groupTools.html'" ></div>
+
+<div class="listInfoBox">
+  <div ng-repeat="player in playerCtrl.players" ng-show="player.userId == playerCtrl.user">
+<h4 class="formHeading"><b>{{player.firstName}}</b><span> </span><b>{{player.lastName}}'s Group List</h4></b>
+  </div>
+    <table class="table table-striped">
+    <thead>
+       <tr>
+          <th>Group Name</th>
+          <th> <a href="#/addGroup"> <button >ADD A GROUP</button></a></th>
+       </tr>
+    </thead>
+      <tr ng-repeat="groups in playerCtrl.groups" ng-show="groups.$id">
+           <td data-title="Group Name'="><h5>{{groups.name}}</h5></td>
+           <td data-title="'Edit'Delete" ><h6><button ng-click="playerCtrl.editGroup(groups.$id)">EDIT </button> <button ng-click="playerCtrl.deleteGroup(groups.$id)"> DELETE</button></h6></td>
+      </tr>
+    </table>
+</div>
+

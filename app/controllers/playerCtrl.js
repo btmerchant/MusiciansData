@@ -4,14 +4,22 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
     var ref = new Firebase('https://musicon.firebaseio.com');
     var playersRef = new Firebase('https://musicon.firebaseio.com/players');
     var songsRef = new Firebase('https://musicon.firebaseio.com/songs');
+    var groupsRef = new Firebase('http://musicon.firebaseio.com/groups');
+    var groupPlayerRef = new Firebase('http://musicon.firebaseio.com/groupPlayer');
     var player = $firebaseArray(playersRef);
     var songs = $firebaseArray(songsRef);
+    var groups = $firebaseArray(groupsRef);
+    var groupPlayer = $firebaseArray(groupPlayerRef);
     this.user = Auth.$getAuth().uid;
     console.log("user", this.user);
     this.players = $firebaseArray(playersRef);
     this.songs = $firebaseArray(songsRef);
+    this.groups = $firebaseArray(groupsRef);
+    this.groupPlayer = $firebaseArray(groupPlayerRef);
     console.log("players array", this.players);
     console.log("song", this.songs);
+    console.log("groups array",this.groups);
+    console.log("groupPlayer array",this.groupPlayer);
     this.currentList = "A";
 
     //  songs.$loaded(function () {
@@ -19,6 +27,8 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
     //   console.log('songs', songs);
     // });
 
+// ***** Song Functions *****
+// 
     this.addSong = function() {
       console.log("addSong Function");
       console.log("currentList = ", this.currentList);
@@ -57,7 +67,7 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
       console.log('Added Song');
     };
 
-    this.editSong = function(id) {
+      this.editSong = function(id) {
       console.log("editSong Function");
       if (!this.newSong.artist) {
         this.newSong.artist = null;
@@ -101,7 +111,43 @@ MusApp.controller('PlayerCtrl', ['$scope', '$location', 'Auth', '$firebaseArray'
       console.log("deleteSong function");
  
       songRef.remove();
-      console.log("delete function run");
+      console.log("delete song function run");
+    };
+
+// ***** Group Functions *****
+
+    this.addGroup = function() {
+      console.log("addGroup Function");
+      if (!this.newGroup.name) {
+        this.newGroup.name = null;
+      }
+
+      groups.$add({
+        name: this.newGroup.name
+      });
+      console.log('Added group');
+    };
+
+   this.editSong = function(id) {
+      console.log("editGroup Function");
+      if (!this.newGroup.name) {
+        this.newGroup.name = null;
+      }
+
+      groups.$add({
+        name: this.newGroup.name,
+      });
+      console.log('Added Group');
+    };
+
+     this.deleteGroup = function(id) {
+      console.log(id);
+      var groupRef = new Firebase('https://musicon.firebaseio.com/groups' + '/' + id);
+      console.log("groupRef", groupRef);
+      console.log("deleteGroup function");
+
+      groupRef.remove();
+      console.log("delete group function run");
     };
 
   }]);
